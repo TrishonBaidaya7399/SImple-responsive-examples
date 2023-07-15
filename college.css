@@ -1,0 +1,67 @@
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+img{
+  width: 100%;
+  height: 100%;  
+}
+.row{
+    height: 400px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.row >div{
+    flex: 1;
+}
+.column{
+    height: calc((100% - 10px)/2);
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+/* way 01 for column-4*/
+/* .column-4 img{
+width: 49%;
+height: 49%;
+}
+.column-4{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+/* way 02 for column-4, both will produce the same result*/
+.column-4 img{
+    width: 100%;
+    height: 100%;
+    }
+    .column-4{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+
+/* Responsive */
+@media screen and (max-width: 576px){
+    .row{
+        flex-direction: column;
+        height: auto;
+    }    
+    .column-4{
+        grid-template-columns: 1fr;
+    }
+}
+/* Medium screen */
+@media screen and (min-width: 576px) and (max-width: 992px){
+   
+    .row{
+      flex-direction: column;
+        height: auto;
+    }    
+  
+}
